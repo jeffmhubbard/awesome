@@ -1,7 +1,6 @@
 local awful = require("awful")
 local ruled = require("ruled")
 
--- Rules to apply to new clients.
 ruled.client.connect_signal("request::rules", function()
     -- All clients will match this rule.
     ruled.client.append_rule {
@@ -31,3 +30,5 @@ ruled.client.connect_signal("request::rules", function()
     }
 
 end)
+
+-- vim: ft=lua:et:sw=4:ts=8:sts=4:tw=80:fdm=marker

@@ -76,3 +76,5 @@ end)
 client.connect_signal("request::manage", function (c)
     awful.titlebar.show(c)
 end)
+
+-- vim: ft=lua:et:sw=4:ts=8:sts=4:tw=80:fdm=marker

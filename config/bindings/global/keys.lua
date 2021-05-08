@@ -238,3 +238,5 @@ awful.keyboard.append_global_keybindings({
     awful.key({ mod.super }, "Print", function () spawn("screen-capture -s", false) end,
               {description = "capture selected window", group = "Awesome: screenshot"})
 })
+
+-- vim: ft=lua:et:sw=4:ts=8:sts=4:tw=80:fdm=marker
