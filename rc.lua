@@ -17,7 +17,6 @@ require("ui.desktop")
 require("ui.panels")
 require("ui.menus")
 require("ui.titlebars")
---require("ui.notifications")
 
 -- XDG autostart
 require("utils.autostart")
