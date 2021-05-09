@@ -12,7 +12,6 @@ screen.connect_signal("request::desktop_decoration", function(s)
         border_width    = theme.panel_border_width,
         border_color    = theme.panel_border_color,
         opacity         = theme.panel_opacity,
-        ontop           = true,
     }
 
     s.panel:setup {
