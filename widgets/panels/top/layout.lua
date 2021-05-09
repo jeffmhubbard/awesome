@@ -8,9 +8,9 @@ local wibox = require("wibox")
 local layoutbox = function(s)
 
     local layout_buttons = {
-        awful.button({ }, 1, function () awful.layout.inc( 1) end),
+        awful.button({ }, 1, function() awful.layout.inc( 1) end),
         -- TODO: popup layout list of middle-click
-        awful.button({ }, 3, function () awful.layout.inc(-1) end),
+        awful.button({ }, 3, function() awful.layout.inc(-1) end),
     }
 
     local layoutbox = awful.widget.layoutbox {

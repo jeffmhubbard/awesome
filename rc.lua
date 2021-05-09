@@ -1,4 +1,6 @@
 -- awesome_mode: api-level=4:screen=on
+
+-- Load LuaRocks, if installed
 pcall(require, "luarocks.loader")
 
 -- Error handling

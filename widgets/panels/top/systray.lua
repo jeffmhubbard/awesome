@@ -81,7 +81,7 @@ systray_widget:connect_signal("mouse::leave", function(widget)
 end)
 
 awful.keyboard.append_global_keybindings({
-    awful.key({ mod.super, mod.alt }, "s", function ()
+    awful.key({ mod.super, mod.alt }, "s", function()
         systray.visible = not systray.visible
         if systray.visible then
             toggle_button:set_image(theme.systray_visible)

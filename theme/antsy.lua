@@ -176,18 +176,18 @@ theme.bg_systray                = theme.ui_color
 theme.systray_icon_spacing      = dpi(2)
 
 -- Menus
-theme.menu_width                    = dpi(160)
-theme.menu_height                   = dpi(20)
-theme.menu_border_color             = theme.border_color_active
-theme.menu_border_width             = theme.border_width
-theme.menu_submenu_icon             = assets_path .. "menu/submenu.svg"
+theme.menu_width                = dpi(160)
+theme.menu_height               = dpi(20)
+theme.menu_border_color         = theme.border_color_active
+theme.menu_border_width         = theme.border_width
+theme.menu_submenu_icon         = assets_path .. "menu/submenu.svg"
 
 -- Tooltips
-theme.tooltip_fg                    = theme.text_color
-theme.tooltip_bg                    = theme.ui_color .. theme.alpha
-theme.tooltip_border_color          = theme.border_color_normal
-theme.tooltip_border_width          = theme.border_width
-theme.tooltip_opacity               = theme.opacity
+theme.tooltip_fg                = theme.text_color
+theme.tooltip_bg                = theme.ui_color .. theme.alpha
+theme.tooltip_border_color      = theme.border_color_normal
+theme.tooltip_border_width      = theme.border_width
+theme.tooltip_opacity           = theme.opacity
 
 -- Notifications
 theme.notification_font         = theme.font
