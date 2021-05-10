@@ -26,6 +26,11 @@ local clock = function(s)
         widget = wibox.container.background,
     }
 
+    function calendar.call_calendar(self, offset, position, _)
+        local screen = awful.screen.focused()
+        awful.widget.calendar_popup.call_calendar(self, offset, position, screen)
+    end
+
     calendar:attach(clock_widget, "tr")
 
     clock_widget:connect_signal("mouse::enter", function(widget)
@@ -39,13 +44,6 @@ local clock = function(s)
     clock_widget:connect_signal("mouse::leave", function(widget)
         if widget.has_backup then widget.bg = widget.backup end
     end)
-
-    awful.keyboard.append_global_keybindings({
-        awful.key({ mod.super, mod.alt }, "i", function()
-            calendar:call_calendar(0, "tr", s)
-        end,
-        {description = "Toggle systray", group = "Awesome: widgets"})
-    })
 
     return clock_widget
 end
