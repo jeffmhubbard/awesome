@@ -14,6 +14,9 @@ ruled.client.connect_signal("request::rules", function()
     }
 end)
 
+-- Additional rules
+require("config.rules.dynamic_opacity")
+
 -- App-specific rules
 require("config.rules.apps.pinentry")
 

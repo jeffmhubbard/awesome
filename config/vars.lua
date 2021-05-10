@@ -22,8 +22,14 @@ local vars = {
     recolor_layout_icons = true,
     recolor_menu_icons = true,
     -- Dynamic opacity
-    dynamic_opacity = {1, 0.9},
-    exclude_opacity = {"mpv", "vlc"},
+    dynamic_opacity = {
+        focus = 1,
+        unfocus = 0.9,
+    },
+    exclude_opacity = {
+        instance = {"vlc"},
+        class = {"mpv", "vlc"},
+    }
 }
 
 return vars
