@@ -16,10 +16,14 @@ local vars = {
         awful.layout.suit.tile.top,
         awful.layout.suit.tile.left,
     },
+    -- Recolor icons
     recolor_titlebar_icons = false,
     recolor_panel_icons = true,
     recolor_layout_icons = true,
     recolor_menu_icons = true,
+    -- Dynamic opacity
+    dynamic_opacity = {1, 0.9},
+    exclude_opacity = {"mpv", "vlc"},
 }
 
 return vars
