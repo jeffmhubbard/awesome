@@ -2,14 +2,13 @@ local awful = require("awful")
 local theme = require("beautiful")
 local wibox = require("wibox")
 local calendar = require("awful.widget.calendar_popup").month()
-local mod = require("config.bindings.mod")
 
 -- theme.margins
 -- theme.hover_color
 
-local clock = function(s)
+local clock = function()
 
-    local textclock = wibox.widget.textclock()
+    local textclock = wibox.widget.textclock(nil, 30)
 
     local clock_widget = wibox.widget {
         {
@@ -31,7 +30,7 @@ local clock = function(s)
         awful.widget.calendar_popup.call_calendar(self, offset, position, screen)
     end
 
-    calendar:attach(clock_widget, "tr")
+    calendar:attach(clock_widget, "tr", {on_hover=false})
 
     clock_widget:connect_signal("mouse::enter", function(widget)
         if widget.bg ~= theme.hover_color then

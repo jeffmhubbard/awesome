@@ -37,7 +37,7 @@ screen.connect_signal("request::desktop_decoration", function(s)
         },
         { -- Right widgets
             require("widgets.panels.top.systray"),
-            require("widgets.panels.top.clock")(s),
+            require("widgets.panels.top.clock")(),
             layout = wibox.layout.fixed.horizontal,
             spacing = theme.panel_spacing,
         },
