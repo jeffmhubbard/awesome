@@ -46,6 +46,7 @@ local tasklist = function(s)
                     {
                         id     = "icon_role",
                         widget = wibox.widget.imagebox,
+                        resize = false,
                     },
                     {
                         id     = "text_role",
