@@ -1,6 +1,7 @@
 local awful = require("awful")
 local theme = require("beautiful")
 local wibox = require("wibox")
+local common = require("utils.common")
 require("ui.menus")
 
 -- theme.menu_button_icon
@@ -9,7 +10,6 @@ require("ui.menus")
 -- theme.menu_button_bg
 -- theme.menu_button_border_color
 -- theme.menu_button_border_width
--- theme.hover_color
 
 local menu_icon = wibox.widget {
     id = 'icon',
@@ -38,17 +38,9 @@ local menu_widget = wibox.widget {
     buttons = menu_buttons,
 }
 
-menu_widget:connect_signal("mouse::enter", function(widget)
-    if widget.bg ~= theme.hover_color then
-        widget.backup = widget.bg
-        widget.has_backup = true
-    end
-    widget.bg = theme.hover_color
-end)
+menu_widget:connect_signal("mouse::enter", common.on_hover_color)
 
-menu_widget:connect_signal("mouse::leave", function(widget)
-    if widget.has_backup then widget.bg = widget.backup end
-end)
+menu_widget:connect_signal("mouse::leave", common.on_unhover_color)
 
 return menu_widget
 

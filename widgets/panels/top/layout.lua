@@ -1,15 +1,14 @@
 local awful = require("awful")
 local theme = require("beautiful")
 local wibox = require("wibox")
+local common = require("utils.common")
 
 -- theme.margins
--- theme.hover_color
 
 local layoutbox = function(s)
 
     local layout_buttons = {
         awful.button({ }, 1, function() awful.layout.inc( 1) end),
-        -- TODO: popup layout list of middle-click
         awful.button({ }, 3, function() awful.layout.inc(-1) end),
     }
 
@@ -28,19 +27,9 @@ local layoutbox = function(s)
         )
     )
 
-    layout_widget:connect_signal("mouse::enter", function(widget)
-        if widget.bg ~= theme.hover_color then
-            widget.backup = widget.bg
-            widget.has_backup = true
-        end
-        widget.bg = theme.hover_color
-    end)
+    layout_widget:connect_signal("mouse::enter", common.on_hover_color)
 
-    layout_widget:connect_signal("mouse::leave", function(widget)
-        if widget.has_backup then
-            widget.bg = widget.backup
-        end
-    end)
+    layout_widget:connect_signal("mouse::leave", common.on_unhover_color)
 
     return layout_widget
 end

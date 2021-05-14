@@ -1,3 +1,5 @@
+local theme = require("beautiful")
+
 local ipairs = ipairs
 
 local common = {
@@ -7,8 +9,21 @@ local common = {
             if v == value then return true end
         end
         return false
-    end
+    end,
 
+    on_hover_color = function(widget)
+        if widget.bg ~= theme.hover_color then
+            widget.backup = widget.bg
+            widget.has_backup = true
+        end
+        widget.bg = theme.hover_color
+    end,
+
+    on_unhover_color = function(widget)
+        if widget.has_backup then
+            widget.bg = widget.backup
+        end
+    end,
 }
 
 return common

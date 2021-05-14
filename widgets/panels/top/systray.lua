@@ -4,12 +4,12 @@ local dpi = theme.xresources.apply_dpi
 local gears = require("gears")
 local wibox = require("wibox")
 local mod = require("config.bindings.mod")
+local common = require("utils.common")
 
 -- theme.systray_visible
 -- theme.systray_hidden
 -- theme.margins
 -- theme.panel_margin
--- theme.hover_color
 -- theme.ui_color
 
 local systray = wibox.widget {
@@ -66,19 +66,9 @@ toggle_button:buttons(
     )
 )
 
-systray_widget:connect_signal("mouse::enter", function(widget)
-    if widget.bg ~= theme.hover_color then
-        widget.backup = widget.bg
-        widget.has_backup = true
-    end
-    widget.bg = theme.hover_color
-end)
+systray_widget:connect_signal("mouse::enter", common.on_hover_color)
 
-systray_widget:connect_signal("mouse::leave", function(widget)
-    if widget.has_backup then
-        widget.bg = widget.backup
-    end
-end)
+systray_widget:connect_signal("mouse::leave", common.on_unhover_color)
 
 awful.keyboard.append_global_keybindings({
     awful.key({ mod.super, mod.alt }, "s", function()
